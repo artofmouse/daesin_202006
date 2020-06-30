@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "UTF-8";
 /* Font */
 /* @font-face {
 	font-family:'NotoSansKR_Light';
@@ -77,10 +77,14 @@ table {
 a {
 	text-decoration: none;
 	color: inherit;
+	outline: 0;
 }
 img {
 	vertical-align: top;
 	/* width: 100%; */
+}
+img.map, map area{
+    outline: none;
 }
 button,
 input[type='button'],

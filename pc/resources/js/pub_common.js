@@ -1,17 +1,11 @@
 // function goTop() {
 // 	$('html').animate({ scrollTop: 0 }, 400);
 // }
-// function openPop(param) {
-// 	$('#' + param).show();
-// }
-// function closePop(param) {
-// 	$('#' + param).hide();
-// }
-// 키비주얼롤링모션
 
+// 키비주얼롤링모션
 // 아침세팅
 function kv_motion_am(){
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv02').animate({
 			opacity : 0
 		},3000);
@@ -19,7 +13,7 @@ function kv_motion_am(){
 			opacity : 1
 		},4000);
 	}, 4000);
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv03').animate({
 			opacity : 0
 		},3000);
@@ -27,7 +21,7 @@ function kv_motion_am(){
 			opacity : 1
 		},4000);
 	}, 11000);
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv01').animate({
 			opacity : 0
 		},3000);
@@ -38,7 +32,7 @@ function kv_motion_am(){
 }
 // 황혼세팅
 function kv_motion_dusk(){
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv03').animate({
 			opacity : 0
 		},3000);
@@ -46,7 +40,7 @@ function kv_motion_dusk(){
 			opacity : 1
 		},4000);
 	}, 4000);
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv01').animate({
 			opacity : 0
 		},3000);
@@ -54,7 +48,7 @@ function kv_motion_dusk(){
 			opacity : 1
 		},4000);
 	}, 11000);
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv02').animate({
 			opacity : 0
 		},3000);
@@ -65,7 +59,7 @@ function kv_motion_dusk(){
 }
 // 저녁세팅
 function kv_motion_pm(){
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv01').animate({
 			opacity : 0
 		},3000);
@@ -73,7 +67,7 @@ function kv_motion_pm(){
 			opacity : 1
 		},4000);
 	}, 4000);
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv02').animate({
 			opacity : 0
 		},3000);
@@ -81,7 +75,7 @@ function kv_motion_pm(){
 			opacity : 1
 		},4000);
 	}, 11000);
-	setTimeout(() => {
+	setTimeout(function(){ 
 		$('.kv_area .slider_kv .kv03').animate({
 			opacity : 0
 		},3000);
@@ -93,33 +87,18 @@ function kv_motion_pm(){
 $(document).ready(function () {
 	var scrollValue = $(this).scrollTop();
 	var kv_area = $('.kv_area').height();
+	var today = new Date();
+	var hours = today.getHours();
+	// console.log(hours);
 	// console.log(scrollValue);
+
+	// 하단 스티키 제어
 	if(scrollValue > kv_area ){
 		$(".sticky_btn").addClass('active');
 	} else{
 		$(".sticky_btn").removeClass('active');
 	}
-	$('#bx-pager li a').removeClass('active')
-	// $('.slider_kv').bxSlider({
-	// 	mode: 'fade',// 가로 방향 수평 슬라이드
-	// 	speed: 3000,        // 이동 속도를 설정
-	// 	pager: false,      // 현재 위치 페이징 표시 여부 설정
-	// 	moveSlides: 1,     // 슬라이드 이동시 개수
-	// 	pager:true,
-	// 	auto: true,
-	// 	pagerCustom: '#bx-pager',
-	// 	infiniteLoop : true,
-	// 	touchEnabled: false,
-	// 	pause: 4000,
-	// 	// autoDelay: 1000,
-	// 	startSlide: 0,
-	// });
-
-	var today = new Date();
-	// var hours = 17;
-	var hours = today.getHours();
-	
-	console.log(hours);
+	// 시간대별 키비주얼 제어
 	if(hours >= 6 && hours < 16){
 		$('.kv_area .slider_kv .kv01').css({
 			opacity : 0
@@ -130,7 +109,7 @@ $(document).ready(function () {
 		$('.kv_area .slider_kv .kv03').css({
 			opacity : 0
 		});
-		setTimeout(() => {
+		setTimeout(function(){ 
 			kv_motion_am()
 		}, 6000);
 		kv_motion_am_Rolling = setInterval(kv_motion_am,21000);
@@ -144,7 +123,7 @@ $(document).ready(function () {
 		$('.kv_area .slider_kv .kv03').css({
 			opacity : 1
 		});
-		setTimeout(() => {
+		setTimeout(function(){ 
 			kv_motion_dusk()
 		}, 6000);
 		kv_motion_dusk_Rolling = setInterval(kv_motion_dusk,21000);
@@ -158,12 +137,30 @@ $(document).ready(function () {
 		$('.kv_area .slider_kv .kv03').css({
 			opacity : 0
 		});
-		setTimeout(() => {
+		setTimeout(function(){ 
 			kv_motion_pm()
 		}, 6000);
 		kv_motion_pm_Rolling = setInterval(kv_motion_pm,21000);
 	}
 	// clearInterval(kv_motion);
+	// 안내서 슬라이드 구현
+	var mySwiper = new Swiper('.swiper-container', {
+		effect: 'fade', // 페이드 효과 사용
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+			renderBullet: function (index, className) {
+				if (index == 0) {
+					return '<span class="' + className + '"></span>';
+				} else {
+					// return '<span class="' + className + '"><img src="../resources/images/sec2_thum' + (index) + '.png" alt="크레온"></span>';
+					return '<span class="' + className + '"></span>';
+				}
+			},
+		},
+		simulateTouch: false,
+	})
 });
 $(window).scroll(function () { 
 	var scrollValue = $(this).scrollTop();
@@ -174,16 +171,4 @@ $(window).scroll(function () {
 	} else{
 		$(".sticky_btn").removeClass('active');
 	}
-	lastScrollTop = scrollValue;
-});
-$('.slider').bxSlider({
-	mode: 'fade',// 가로 방향 수평 슬라이드
-	speed: 500,        // 이동 속도를 설정
-	// moveSlides: 1,     // 슬라이드 이동시 개수
-	pager:true,
-	pagerCustom: '#bx-pager',
-	touchEnabled: false,
-	onSliderLoad: function() { 
-		$('#bx-pager >  li > a').removeClass('active')
-	},
 });

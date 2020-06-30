@@ -2,9 +2,8 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="device-width">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<link rel="stylesheet" href="../resources/css/libs/jquery.bxslider.css">
+	<link rel="stylesheet" href="../resources/css/libs/swiper.css">
 	<link rel="stylesheet" href="../resources/css/reset.css">
 	<link rel="stylesheet" href="../resources/css/common.css">
 	<link rel="stylesheet" href="../resources/css/style.css">
@@ -21,13 +20,13 @@
 		</div>
 		<div class="btn_area">
 			<ul>
-				<li><a href="#"><img src="../resources/images/kv_btn01.png" alt="계좌개설하기"></a></li>
-				<li><a href="#"><img src="../resources/images/kv_btn02.png" alt="혜택신청하기"></a></li>
+				<li><a href="#" target="_blank"><img src="../resources/images/kv_btn01.png" alt="계좌개설하기"></a></li>
+				<li><a href="#" target="_blank"><img src="../resources/images/kv_btn02.png" alt="혜택신청하기"></a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="top_area">
-		<h1><img src="../resources/images/logo.png" alt="크레온"></h1>
+		<h1><a href="#" target="_blank"><img src="../resources/images/logo.png" alt="크레온"></a></h1>
 		<h2><img src="../resources/images/logo2.png" alt="해외주식의 시작 크레온"></h2>
 	</div>
 	<!-- key visual sub -->
@@ -35,32 +34,28 @@
 	<!-- 해외주식이벤트 -->
 	<div class="event_area">
 		<div class="inner">
-			<h3><img src="../resources/images/sec1_tl.png" alt="크레온"></h3>
-			<div class="con_area"><img src="../resources/images/sec1_img.png" alt="크레온" usemap="#event_go"></div>
+			<h3><img src="../resources/images/sec1_tl.png" alt="더 할수록 더 커지는 해외주식 이벤트"></h3>
+			<div class="con_area"><img src="../resources/images/sec1_img.png" alt="더 할수록 더 커지는 해외주식 이벤트 내용" usemap="#event_go"></div>
 			<map name="event_go">
-				<area shape="rect" coords="557,280,820,327" href="#" alt="이벤트1" />
-				<area shape="rect" coords="557,654,820,691" href="#" alt="이벤트2" />
-				<area shape="rect" coords="557,1031,820,1068" href="#" alt="이벤트3" />
+				<area shape="rect" coords="557,280,820,317" href="#" alt="이벤트 보러가기" />
+				<area shape="rect" coords="557,654,820,691" href="#" alt="이벤트 보러가기" />
+				<area shape="rect" coords="557,1031,820,1068" href="#" alt="이벤트 보러가기" />
 			</map>
 		</div>
 	</div>
 	<!-- 안내서 -->
 	<div class="guide_area">
 		<div class="inner">
-			<h3><img src="../resources/images/sec2_tl.png" alt="크레온"></h3>
+			<h3><img src="../resources/images/sec2_tl.png" alt="해외주식 스타터를 위한  안내서"></h3>
 			<div class="con_area">
-				<div class="slide_area slider">
-					<div><img src="../resources/images/sec2_cover.jpg" alt="크레온"></div>
-					<div><img src="../resources/images/sec2_step1.jpg" alt="크레온"></div>
-					<div><img src="../resources/images/sec2_step2.jpg" alt="크레온"></div>
-					<div><img src="../resources/images/sec2_step3.jpg" alt="크레온"></div>
-				</div>
-				<div class="thum_area">
-					<ul id="bx-pager">
-						<li><a data-slide-index="1" href=""><img src="../resources/images/sec2_thum1.png" alt="크레온"></a></li>
-						<li><a data-slide-index="2" href=""><img src="../resources/images/sec2_thum2.png" alt="크레온"></a></li>
-						<li><a data-slide-index="3" href=""><img src="../resources/images/sec2_thum3.png" alt="크레온"></a></li>
-					</ul>
+				<div class="swiper-container slide_area">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="../resources/images/sec2_cover.jpg" alt="안내서 커버이미지"></div>
+						<div class="swiper-slide"><img src="../resources/images/sec2_step1.jpg" alt="1.비대면으로 간단하게 계좌 개설하기"></div>
+						<div class="swiper-slide"><img src="../resources/images/sec2_step2.jpg" alt="2.수수료 우대 받고 환전하기"></div>
+						<div class="swiper-slide"><img src="../resources/images/sec2_step3.jpg" alt="3.거래조건 꼼꼼하게 챙기기"></div>
+					</div>
+					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 		</div>
@@ -68,12 +63,12 @@
 	<!-- 해외주식혜택 -->
 	<div class="benefit_area">
 		<div class="inner">
-			<h3><img src="../resources/images/sec3_tl.png" alt="크레온"></h3>
+			<h3><img src="../resources/images/sec3_tl.png" alt="아직 끝나지 않은 해외주식 혜택!"></h3>
 			<div class="con_area">
 				<div class="btn_area">
 					<ul>
-						<li><a href="#"><img src="../resources/images/sec3_btn01.png" alt="카카오플러스친구 추가하기"></a></li>
-						<li><a href="#"><img src="../resources/images/sec3_btn02.png" alt="대신튜브 보러가기"></a></li>
+						<li><a href="#" target="_blank"><img src="../resources/images/sec3_btn01.png" alt="카카오플러스친구 추가하기"></a></li>
+						<li><a href="#" target="_blank"><img src="../resources/images/sec3_btn02.png" alt="대신튜브 보러가기"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -85,18 +80,22 @@
 	</div>
 	<!-- Footer -->
 	<div class="footer_area">
-		<div class="footer_logo"><img src="../resources/images/footer_logo.png" alt="대신증권"></div>
+		<div class="footer_img"><img src="../resources/images/footer.jpg" alt="대신증권" usemap="#download_go"></div>
+		<map name="download_go">
+			<area shape="rect" coords="376,157,546,200" href="#" target="_blank" alt="Google Play" />
+			<area shape="rect" coords="559,157,727,200" href="#" target="_blank" alt="App Store" />
+		</map>
 	</div>
 	<!-- 하단스티키버튼 -->
 	<div class="sticky_btn">
 		<div class="btn_area">
-			<div class="btn"><a href="#"><img src="../resources/images/blank.png" alt="카카오플러스친구 추가하기"></a></div>
-			<div class="btn"><a href="#"><img src="../resources/images/blank.png" alt="카카오플러스친구 추가하기"></a></div>
+			<div class="btn"><a href="#" target="_blank"><img src="../resources/images/blank.png" alt="카카오플러스친구 추가하기"></a></div>
+			<div class="btn"><a href="#" target="_blank"><img src="../resources/images/blank.png" alt="카카오플러스친구 추가하기"></a></div>
 		</div>
 	</div>
 </div>
 <script src="../resources/js/libs/jquery-3.4.1.min.js"></script>
-<script src="../resources/js/libs/jquery.bxslider.js"></script>
+<script src="../resources/js/libs/swiper.min.js"></script>
 <script src="../resources/js/pub_common.js"></script>
 </body>
 </html>
