@@ -159,7 +159,8 @@ $(document).ready(function () {
 				}
 			},
 		},
-		simulateTouch: false,
+		simulateTouch: false, //PC 마우스드래그제어
+		allowTouchMove: false, //Mobile 스와이프제어
 	});
 
 	var kv_area_h = $('.container .kv_area .kv01').height();
